@@ -1,12 +1,16 @@
 package com.ms.RefferalManagement.Service;
 
+import java.util.Collection;
 import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.ms.RefferalManagement.Entity.Role;
 import com.ms.RefferalManagement.Entity.User;
 import com.ms.RefferalManagement.Repository.UserRepository;
 
@@ -23,6 +27,16 @@ public class UserServiceImpl implements UserService {
 	public List<User> getAll() {
 		return userRepository.findAll();
 	}
+	
+	@Override
+	public ResponseEntity<Object> getAllUsers() {
+        List<User> dbUsers = userRepository.findAll();
+        if (dbUsers.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        // TODO Auto-generated method stub
+        return new ResponseEntity<>(dbUsers, HttpStatus.OK);
+    }
 
 	@Override
 	public String add(User user) {

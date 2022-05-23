@@ -17,8 +17,8 @@ public class Privilege {
 
     private String name;
 
-    @ManyToMany(mappedBy = "privileges")
-    private Collection<Role> roles;
+    /*@ManyToMany(mappedBy = "privileges")
+    private Collection<Role> roles;*/
 
 	public Long getId() {
 		return id;
@@ -36,11 +36,11 @@ public class Privilege {
 		this.name = name;
 	}
 
-	public Collection<Role> getRoles() {
+	/*public Collection<Role> getRoles() {
 		return roles;
 	}
 
 	public void setRoles(Collection<Role> roles) {
 		this.roles = roles;
-	}
+	}*/
 }

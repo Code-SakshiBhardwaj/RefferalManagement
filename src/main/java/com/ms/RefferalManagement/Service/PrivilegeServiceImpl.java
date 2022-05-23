@@ -25,7 +25,7 @@ public class PrivilegeServiceImpl implements PrivilegeService {
 
 	@Override
 	public String add(Privilege privilege) {
-		if(privilege.getName()==null ||privilege.getRoles()==null) {
+		if(privilege.getName()==null ){
 			return "Mandatory field is missing";
 		}
 	for(Privilege c:getAll()) {

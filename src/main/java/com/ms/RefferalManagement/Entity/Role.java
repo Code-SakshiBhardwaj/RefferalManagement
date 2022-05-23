@@ -34,13 +34,13 @@ public class Role {
 		this.name = name;
 	}
 
-	public Collection<User> getUsers() {
+	/*public Collection<User> getUsers() {
 		return users;
 	}
 
 	public void setUsers(Collection<User> users) {
 		this.users = users;
-	}
+	}*/
 
 	public Collection<Privilege> getPrivileges() {
 		return privileges;
@@ -50,8 +50,8 @@ public class Role {
 		this.privileges = privileges;
 	}
 
-	@ManyToMany(mappedBy = "roles")
-    private Collection<User> users;
+	/*@ManyToMany(mappedBy = "roles")
+    private Collection<User> users;*/
 
     @ManyToMany
     @JoinTable(
